@@ -1,0 +1,124 @@
+<section class="money-back">
+<div class="container">
+  <div class="img-text">
+    <div class="img-hold">
+        {%- if section.settings.image != blank -%}
+          <img 
+            src="{{ section.settings.image | image_url }}" 
+            alt="Money Back Guarantee" 
+            width="292" 
+            height="auto"
+            >
+        {%- endif -%}
+    </div>
+    <div class="text-hold">
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<style>
+.money-back {
+	padding: 50px 0;
+}
+
+.money-back h2 {
+	font-size: 48px;
+	line-height: 82px;
+	margin: 0 0 10px;
+	letter-spacing: normal;
+}
+
+.money-back p {
+	font-size: 24px;
+	line-height: 36px;
+	margin: 0;
+	color: #3F3631;
+	letter-spacing: normal;
+}
+
+.money-back .container {
+	background-color: #FBFCFB;
+	padding: 50px 55px;
+	margin: 0 auto;
+	max-width: 1350px;
+}
+
+.money-back .img-text {
+	display: flex;
+	justify-content: space-between;
+}
+
+.money-back .img-hold {
+	max-width: 292px;
+	width: 100%;
+	margin-right: 50px;
+}
+
+.money-back .img-hold img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 991.98px) {
+	.money-back .container {
+		padding: 30px 25px;
+	}
+
+	.money-back h2 {
+		font-size: 36px;
+		line-height: 46px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.money-back p {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+@media screen and (max-width: 767.98px) {
+	.money-back .img-text {
+		display: block;
+	}
+
+	.money-back .img-hold {
+		max-width: 200px;
+		margin: 0 auto 20px;
+	}
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Money Back Guarantee",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }
+    ],
+  "presets": [
+    {
+      "name": "Money Back Guarantee",
+      "category": "Custom"
+    }
+  ]
+  }
+{% endschema %}
